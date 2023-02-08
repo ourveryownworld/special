@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+
+      
+      .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 100px;
+      }
+
+      .image-container {
+        width: 200px;
+        height: 200px;
+        border: 1px solid black;
+        margin-bottom: 20px;
+      }
+
+      .message {
+        font-size: 20px;
+        margin-bottom: 20px;
+        text-align: center;
+      }
+
+      .buttons {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 20px;
+      }
+
+      button {
+        margin: 0 10px;
+        padding: 10px 20px;
+        font-size: 18px;
+        background-color: pink;
+        border: none;
+        border-radius: 10px;
+        color: white;
+        cursor: pointer;
+      }
+
+      #response {
+        font-size: 18px;
+        text-align: center;
+        margin-top: 20px;
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="image-container"><img src="sad.png" height="200px" width="200px" alt=""></div>
+      <p class="message">I promise to turn these moments into...</p>
+      <div class="image-container">
+        <img src="happy.png" height="200px" width="200px" alt="">
+      </div>
+      <p class="message">...if you say yes to being my valentine</p>
+      <div class="buttons">
+        <button id="yes-button">Yes</button>
+        <button id="no-button">No</button>
+      </div>
+      <p id="response"></p>
+    </div>
+
+    <script>
+      const yesButton = document.querySelector("#yes-button");
+      const noButton = document.querySelector("#no-button");
+      const response = document.querySelector("#response");
+
+      yesButton.addEventListener("click", function() {
+        if (noButton.style.display === "none") {
+          response.innerHTML = "Finally come to the right choice, eh darling?";
+        } else {
+          response.innerHTML = "Okay BET, let's go!";
+        }
+      });
+
+      if (noButton) {
+        noButton.addEventListener("click", function() {
+          response.innerHTML = "Click on the yes button, my love!";
+          noButton.style.display = "none";
+        });
+      }
+    </script>
+  </body>
+</html>
